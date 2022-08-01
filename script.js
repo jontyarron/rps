@@ -53,9 +53,9 @@ selectionButtons.forEach(selectionButton => {
                     }
                     return 'Too bad computer wins 😫. Click on reset to play again'
                 }
-                else if (parseInt(computerScoreSpan.textContent) < 5 || parseInt(yourScoreSpan.textContent) < 5){}
+                else if (parseInt(computerScoreSpan.textContent) < 5 || parseInt(yourScoreSpan.textContent) < 5){
                 return ''
-              
+                }
             }
             finalOutcome.innerText = declareWinner(yourScoreSpan,computerScoreSpan);
 

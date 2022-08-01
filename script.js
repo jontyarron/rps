@@ -1,43 +1,103 @@
 
+const userMove = document.querySelector('.user-move')
 
-//selects a string for the given array randomly
+const comMoves = document.querySelector('.com-move');
+const newComMove = document.createElement('p')
+comMoves.appendChild(newComMove)
 
-   function computerPlay () { 
-    let choice = ['rock', 'paper', 'scissors'] ;
-    return choice[Math.floor(Math.random()*choice.length)]
- 
-   }
+const result = document.querySelector('.result')
+const outcome = document.createElement('h1')
+result.appendChild(outcome)
 
-//takes user input through prompt and selects a random for choice(variable) and declares result
+const yourScoreSpan = document.querySelector('[data-your-score]');
+const computerScoreSpan = document.querySelector('[data-com-score]');
 
-   function playRound (playerSelection, computerSelection) {
-    if ( playerSelection.toLowerCase() === computerSelection) {
-       return (` it's a tie ! you both chose ${playerSelection}.`)}
-    else if ( playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
-    return ('You Lose! paper beats rock') }
-    else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
-       return ('You win! paper beats rock') }
-    else if (playerSelection .toLowerCase()=== 'rock' && computerSelection === 'scissors') {
-       return ('You win! rock beats scissors') }
-    else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-       return ('You Lose! rock beats scissors') }
-    else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
-       return ('You Lose! scissors beat paper')}
-    else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper') {
-      return ('You Win! scissors beat paper')}
+const finalOutcome = document.querySelector('.final-outcome')
+
+const resetButton = document.querySelector('#reset')
+
+const selectionButtons = document.querySelectorAll('[data-selection]')
+
+
+
+selectionButtons.forEach(selectionButton => {
+    selectionButton.addEventListener('click',()=> {
+        playerSelection = selectionButton.dataset.selection
         
-} 
+        userMove.innerText = playerSelection
+        const computerSelection = computerPlay()
+        newComMove.innerText = computerSelection
+        
+        outcome.innerText = playGame(playerSelection,computerSelection);
+        
+        
+
+        if (playGame(playerSelection,computerSelection).includes('Win')) {
+            incrementScore(yourScoreSpan)}
+            if (playGame(playerSelection,computerSelection).includes('Lose')) {
+                incrementScore(computerScoreSpan)};
+
+                //Declares Winner when either of the players reach 5 wins
+            function declareWinner(yourScoreSpan,computerScoreSpan){
+                if (parseInt(yourScoreSpan.textContent) === 5){
+                    finalOutcome.classList.add('result-declaration');
+                    for (let i = 0; i < selectionButtons.length; i++){
+                        selectionButtons[i].disabled= true
+                    }
+                    return 'Congrats You Win The Game 👑! Click on reset to play again'
+                }
+                else if (parseInt(computerScoreSpan.textContent) === 5){
+                    finalOutcome.classList.add('result-declaration')
+                    for (let i = 0; i < selectionButtons.length; i++){
+                        selectionButtons[i].disabled= true
+                    }
+                    return 'Too bad computer wins 😫. Click on reset to play again'
+                }
+                else if (parseInt(computerScoreSpan.textContent) < 5 || parseInt(yourScoreSpan.textContent) < 5){}
+                return ''
+              
+            }
+            finalOutcome.innerText = declareWinner(yourScoreSpan,computerScoreSpan);
+
+     })
+     
+            
+        } ) 
+
+        // Increments scores of user and com
+     function incrementScore(scoreSpan) {
+            scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
+            
+            
+        }
+// assigns random move among given elements
+ function computerPlay(){
+    let choice = ['✊','✋','✌']
+    move = choice[Math.floor(Math.random()* choice.length)]
+    return move
+}   
 
 
- 
 
-for (let i = 0; i < 5; i++) {
+//  Takes two  arguments determines who the winner is
+       
+function playGame(playerSelection,computerSelection) {
+    if ( playerSelection === computerSelection) {
+        return (` it's a tie ! you both chose ${playerSelection}.`)}
+     else if ( playerSelection === '✊' && computerSelection === '✋') {
+     return ('You Lose! Paper beats Rock') }
+     else if (playerSelection === '✋' && computerSelection === '✊') {
+        return ('You Win! Paper beats Rock') }
+     else if (playerSelection === '✊' && computerSelection === '✌') {
+        return ('You Win! Rock beats Scissors') }
+     else if (playerSelection === '✌' && computerSelection === '✊') {
+        return ('You Lose! Rock beats Scissors') }
+     else if (playerSelection === '✋' && computerSelection === '✌') {
+        return ('You Lose! Scissors beat Paper')}
+     else if (playerSelection === '✌' && computerSelection === '✋') {
+       return ('You Win! Scissors beat Paper')}
+       
+    }
 
-    const playerSelection = prompt('Choose your weapon'); 
-    const computerSelection = computerPlay() ;
-    console.log('you :', playerSelection) ;
-    console.log('com : ',computerSelection) ;
-    console.log(playRound(playerSelection,computerSelection) )
- }
-
-  
+    // resets the score / reloads the website
+    resetButton.addEventListener('click',()  => location.reload())

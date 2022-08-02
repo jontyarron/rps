@@ -7,14 +7,16 @@
 }
 
 body{
+
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-family: 'Acme', sans-serif;
-    position: fixed;
     background-color:rgb(34, 33, 33);
     align-items: center;
+    /* position: fixed; */
     justify-content: space-between;
-    height: auto;
 
     
 }
@@ -22,8 +24,8 @@ body{
 .container {
     display: flex column;
     justify-content: space-around;
-    width: 1920px;
-    height: 700px;
+    width: 100%;
+    height: 60vh;
 }
 
 header{
@@ -34,36 +36,35 @@ header{
     border-color: orangered;
     border-bottom: 0px rgb(0, 0, 0);
     border-style: solid;
-    margin-bottom: 50px;
+    margin-bottom: 4em;
+    cursor: pointer;
 }
 
 
 .header-text{
-    font-family: 'Acme', sans-serif;
     color: orangered;
-    padding: 50px ;
-    font-size: 60px;
+    padding: 0.9em;
+    font-size: 4em;
     letter-spacing: 5px;
 }
 .sub-container{
     display:flex;
     width: 100%;
-    /* margin-right: 200px; */
 
 }
 .match-container {
     display: flex;
-    margin-top: -50px;
+    margin-top: -2.2em;
     justify-content: center;
     width: 100%;
-    margin-left: -100px;
+    margin-left: -5em;
 
 }
 
 
 
 .header-text:hover{
-
+    transform: scale(1.2);
     transition: 5s;
     color: lightslategray;
     
@@ -71,22 +72,20 @@ header{
 
 
 
-#user {
+/* #user {
     display: block;
 
-}
+} */
 
 #user-button{
-    font-size: 100px;
+    font-size: 6.2em;
     border: solid;
     border-radius: 100%;
     background: none;
-    padding: 20px;
+    padding: 1rem;
     color: seashell;
-    display: flex column;
-    margin-top: 70px;
-    width: 160px;
-    outline: none;
+    margin-top: 3rem;
+    width: 8vw;
     cursor: pointer;
 }
 
@@ -104,17 +103,15 @@ header{
 .selections {
     box-sizing: border-box;
     background: rgb(0, 0, 0) ;
-    border-radius: px;
     border-style: solid;
     border-color: orangered;
     border-right: none;
     border-top: none;
-    margin-top: -50px;
-    width: 200px;
-    padding-right: 200px;
-    padding-left: 30px;
-
-
+    margin-top: -4em;
+    width: 10em;
+    padding-right: 12em;
+    padding-left: 2em;
+    height: 44em;
 }
 
 
@@ -122,44 +119,54 @@ header{
     display: flex;
     justify-content: start;
     width: fit-content;
-    margin-left: 100px;
+    margin-left: 1.6em;
     word-spacing: 10px;
-    font-size: 60px;
+    font-size: 3.2em;
     height: 100px;
     position: fixed;
-    margin-top: 50px;
+    margin-top: 2rem;
     color: orangered;
     background-color: black;
     border-radius: 0px 50px;
     border-style: solid;
     padding: 0px 20px;
-
+    padding-top: 0.5rem;
 }
 
 .result-declaration:hover{
     transform: scale(1.05);
     transition: 150ms;
     color: azure;
+    cursor: pointer;
 
 }
 
 .user-move{
     color: white;
-    margin-top: 0px;
-    font-size: 200px;
-    margin-left: -350px;
-    margin-top: 200px;
+    font-size: 14em;
+    margin-left: -1.5em;
+    height: fit-content;
+    margin-top: 0.73em;
     margin-right: 300px;
+    cursor: pointer;
+
     
 }
 
+.com-move:hover,.user-move:hover{
+    transform: scale(1.2);
+    transition: 2s;
+}
 
 .com-move {
     color: white;
-    margin-top: 200px;
-    font-size: 200px;
-    margin-right: -300px;
+    margin-top: 0.7em;
+    font-size: 14em;
+    margin-right: -1.5em;
+    height: fit-content;
     margin-left: 500px;
+    cursor: pointer;
+    
 }
 
 .score {
@@ -168,13 +175,10 @@ header{
     gap: 30px;
     background-color: rgb(34, 33, 33);
     position: fixed;
-    width: 400PX;
-    height: 250px;
-    margin-top: 200px;
+    width: 20%;
+    height: 15em;
+    margin-top: 11%;
     border-radius: 20px;
-    /* margin-left: -600px; */
-    margin-right: 0px;
-    margin-right: 0;
 }
 
 .user-score {
@@ -185,23 +189,22 @@ header{
     border-radius: 60px 10px 10px 60px;
 }
 .user-score-heading {
-    margin-left: 43px;
+    margin-left: 2.5rem;
     color: black;
 }
 
 .com-score-heading {
-    margin-left: 43px;
+    margin-left: 2.5rem;
     color: white;
 }
 
 span {
-    font-size: 100px;
-    margin-left: 70px;
+    font-size: 6rem;
+    margin-left: 4rem;
 }
 
 .com-score {
     display: flex column;
-   
     color: white;
     background-color: rgb(0, 0, 0);
     width: 100%;
@@ -211,32 +214,26 @@ span {
 
 
 .result {
-    font-family: 'Acme', sans-serif;
     letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    width: 1600px;
-    margin-top: -150px;
-    margin-left: 200px;
-    height: 30px;
+    width:fit-content ;
+    margin-top: -1.8em;
+    margin-left: 32%;
+    height: 7rem;
 }
 .result,h1 {
-    font-size: 60px;
+    font-size: 3.6rem;
     color: rgb(255, 255, 255);
 }
 
 footer{
     display: flex;
     justify-content: center;
-    background: local;
     background-color: rgb(155, 155, 155);
-    margin-top: 97px;
     width: 100%;
-    border-radius: 5px;
-    position: fixed;
+    margin-top: 8.4em;
 }
 h2{
-    padding: 5px;
+    padding: 10px;
 }
 
 #reset {
@@ -245,18 +242,16 @@ h2{
     color: white;
     background: orangered;
     font-size: large;
-    border-radius: 20px;
+    border-radius: 20px 20px 8px 8px;
     padding: 10px;
-    margin-left: 150px;
+    margin-left: 54em;
+    margin-top: -20vh;
+    margin-bottom: 10vh;
+    min-height: 30px;
 }
 
 #reset:hover {
-    background-color: orange;
-}
-
-#reset-div {
-    display: flex;
-    justify-content: center;
-    margin-top: -100px;
-    margin-bottom: 78px;
+    background-color: rgb(148, 30, 0) ;
+    transform: scale(1.1);
+    transition: 100ms;
 }

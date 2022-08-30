@@ -44,7 +44,7 @@ selectionButtons.forEach(selectionButton => {
                     for (let i = 0; i < selectionButtons.length; i++){
                         selectionButtons[i].disabled= true
                     }
-                    return '<p>Congrats You Win The Game 👑! Click on reset to play again</p>'
+                    return '<p style="color: blue;">Congrats You Win The Game 👑! Click on reset to play again</p>'
                 }
                 else if (parseInt(computerScoreSpan.textContent) === 5){
                     finalOutcome.classList.add('result-declaration') 

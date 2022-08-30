@@ -204,8 +204,8 @@ section {
 }
 .result {
     display: flex;
-  margin-left: 14rem;
-  margin-top: 2rem;
+    margin-left: 14rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
     align-self: center;
 }
@@ -214,6 +214,6 @@ section {
 footer {
     background-color: #c9c9ce;
     text-align: center;
-  width: 100vw;
+    width: 100vw;
     padding: 5px;
 }

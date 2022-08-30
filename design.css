@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Berkshire+Swash&family=Merienda&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Acme,'sans-serif';
+    letter-spacing: 1px;
+    display: flex column;
+    background-color: #0a0a0a
+
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max(7rem,5vw);
+    width: 100vw;
+    padding: 20px;
+    background: #00487c;
+    border-bottom: solid 2px black;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.container {
+    display: flex column;
+    height: calc(100vh - 7rem);
+
+}
+
+.sub-container{
+    height:max(90vh,100%);
+    width: 100%;
+}
+
+
+.result-declaration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 2px 7px  rgb(185, 184, 184);
+    white-space: nowrap ;
+    font-size: min(4rem,4vw)
+
+    /*color set , inline*/
+ }
+
+.final-outcome{
+    display: flex;
+    height: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.user-move,.com-move{
+    font-size: 14rem;
+    margin: 0 10rem;
+    width: 16rem;
+    height: 16rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgb(60, 7, 146);
+    cursor: pointer;
+
+}
+
+.match-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+
+
+.score{
+    display: flex;
+    gap: 4rem;
+    /* background-color: #fff; */
+    height: 16rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    cursor: pointer;
+
+}
+
+.user-score-heading,.com-score-heading{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.user-score{
+    background-color:blue;
+    height: 100%;
+    width: 10rem;
+    text-align: center;
+    border-radius: 30px 5px;
+    color :white;
+    box-shadow: 3px 4px 5px white, -3px -2px 5px white;
+}
+
+
+
+.com-score{
+    background-color:red;
+    height: 100%;
+    width: 10rem;
+    text-align: center;
+    border-radius: 5px 30px;
+    color :white;
+    box-shadow: 3px 4px 5px white, -3px -2px 5px white;
+
+}
+
+.reset-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#reset{
+    font-size: 1.2rem;
+    background-color: #131e9b;
+    color: white;
+    padding:10px;
+    border-radius: 20px;
+    font-weight: bold;
+
+}
+
+#reset:hover{
+    scale: 1.1;
+    transition: 200ms;
+    border-color: #00487c;
+    background-color: #00487c;
+    cursor: pointer;
+}
+
+.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    height: 5rem;
+    color: white;
+}
+
+#user > button{
+    height:10rem ;
+    width: 10rem;
+    border-radius: 50%;
+    font-size: 8rem;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+#user > button:hover {
+    scale: 1.2;
+    transition: 200ms;
+    color: #00487c;
+    border-color: #00487c;
+}
+
+
+#user > button:active{
+    scale: 1;
+    color: white;
+}
+#user{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    gap: 5rem;
+}
+
+footer{
+    background-color: #555c61;
+    text-align: center;
+    padding: 10px;
+
+}

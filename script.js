@@ -44,14 +44,14 @@ selectionButtons.forEach(selectionButton => {
                     for (let i = 0; i < selectionButtons.length; i++){
                         selectionButtons[i].disabled= true
                     }
-                    return '<p>Congrats You Win The Game 👑!</p><p style = "font-size: 2rem; color: white;"> Click on reset to play again</p>'
+                    return '<p>Congrats You Win The Game 👑! Click on reset to play again</p>'
                 }
                 else if (parseInt(computerScoreSpan.textContent) === 5){
-                    finalOutcome.classList.add('result-declaration')
+                    finalOutcome.classList.add('result-declaration') 
                     for (let i = 0; i < selectionButtons.length; i++){
                         selectionButtons[i].disabled= true
                     }
-                    return '<p>Too bad computer wins 😫.</p> <p style = "font-size: 2rem; color: white;">Click on reset to play again</p>'
+                    return '<p style="color: red;">Too bad computer wins 😫. Click on reset to play again</p>'
                 }
                 else if (parseInt(computerScoreSpan.textContent) < 5 || parseInt(yourScoreSpan.textContent) < 5){
                 return ''
